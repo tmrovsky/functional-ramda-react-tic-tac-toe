@@ -56,6 +56,13 @@
     "lint:fix": "standard --fix",
     "prepush": "yarn lint"
   },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "config/**",
+      "scripts/**"
+    ]
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
