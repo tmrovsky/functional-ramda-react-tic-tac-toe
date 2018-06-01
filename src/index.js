@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import registerServiceWorker from './registerServiceWorker'
+import App from 'components/App/App'
 import 'assets/scss/index.scss'
 
-ReactDOM.render(<h1>Let's become Functional!</h1>, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
 registerServiceWorker()

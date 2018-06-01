@@ -1,2 +1,6 @@
 @import '../../../node_modules/normalize-scss/sass/normalize/import-now';
+@import "variables";
 @import "core";
+
+@import "components/App";
+@import "components/GameBoard";

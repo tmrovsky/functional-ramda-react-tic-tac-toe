@@ -1,0 +1,47 @@
+.game-board {
+  display: flex;
+  flex-flow: row wrap;
+  width: 500px;
+  height: 500px;
+  justify-content: space-around;
+  margin: 100px auto;
+}
+
+.game-board__tile {
+  display: flex;
+  border-radius: 15px;
+  cursor: pointer;
+  width: $tile_size;
+  height: $tile_size;
+  background: $tile_background;
+  transition: background-color .3s;
+
+  &-player1 {
+    background: $player-1-color;
+    pointer-events: none;
+  }
+
+  &-player2 {
+    background: $player-2-color;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background: $hover-color;
+
+    .game-board__tile__icon-empty {
+      opacity: .4;
+    }
+  }
+}
+
+.game-board__tile__icon {
+  max-width: 75px;
+  max-height: 75px;
+  transform: translate(50%, 50%);
+  color: white;
+
+  &-empty {
+    opacity: 0;
+  }
+}
