@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import GameBoardTile from './GameBoardTile/GameBoardTile'
+import { initBoard } from 'services/GameService'
 
 class GameBoard extends Component {
   state = {
-    board: ['o', '', 'o', 'o', 'x', 'x', 'x', 'o', 'x']
+    board: initBoard
   }
 
   render () {
