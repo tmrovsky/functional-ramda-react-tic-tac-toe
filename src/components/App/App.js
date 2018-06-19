@@ -1,10 +1,16 @@
 import React from 'react'
-import GameBoard from 'components/GameBoard/GameBoard'
+import { Provider } from 'react-redux'
+import GameBoardConnector from 'connectors/GameBoardConnector'
+import storeConfigurator from 'services/ReduxStoreConfigurator'
+
+const store = storeConfigurator.configureStore()
 
 const App = () => (
-  <div className='tic-tac-toe-app'>
-    <GameBoard />
-  </div>
+  <Provider store={store}>
+    <div className='tic-tac-toe-app'>
+      <GameBoardConnector />
+    </div>
+  </Provider>
 
 )
 

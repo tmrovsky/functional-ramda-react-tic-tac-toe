@@ -1,4 +1,4 @@
-import { any, anyPass, compose, contains, curry, flatten, identity, join, juxt, pluck, repeat, reverse, splitEvery } from 'ramda'
+import { always, any, anyPass, compose, cond, contains, curry, equals, isEmpty, flatten, identity, join, juxt, pluck, repeat, reverse, splitEvery } from 'ramda'
 import { mapIndexed } from 'helpers/collection'
 
 const getRows = board => splitEvery(3, board)
@@ -25,4 +25,11 @@ const checkSequence = anyPass([xWon, oWon])
 
 export const hasWon = board => any(checkSequence, allSequences(board))
 
+export const hasAnyMovesLeft = any(isEmpty)
+
 export const initBoard = repeat('', 9)
+
+export const setNextSymbol = cond([
+  [equals('x'), always('o')],
+  [equals('o'), always('x')]
+])

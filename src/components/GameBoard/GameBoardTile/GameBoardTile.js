@@ -25,8 +25,8 @@ const mapSymbolToIcon = cond([
   [equals(PLAYERS.PLAYER_2), always(faCircle)]
 ])
 
-const GameBoardTile = ({ symbol = '', nextSymbol = 'x' }) => (
-  <div className={gameBoardTileClass(symbol, nextSymbol)}>
+const GameBoardTile = ({ symbol = '', nextSymbol = 'x', onMove, index }) => (
+  <div className={gameBoardTileClass(symbol)} onClick={() => onMove(index, nextSymbol)}>
     <FontAwesomeIcon
       className={gameBoardTileIconClass(symbol)}
       icon={mapSymbolToIcon(symbol || nextSymbol)}
