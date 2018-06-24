@@ -36,8 +36,10 @@ const GameBoardTile = ({ symbol = '', nextSymbol = 'x', onMove, index }) => (
 )
 
 GameBoardTile.propTypes = {
-  symbol: PropTypes.oneOf(['', 'x', 'o']),
-  nextSymbol: PropTypes.oneOf(['x', 'o'])
+  index: PropTypes.number.isRequired,
+  onMove: PropTypes.func.isRequired,
+  nextSymbol: PropTypes.oneOf(['x', 'o']),
+  symbol: PropTypes.oneOf(['', 'x', 'o'])
 }
 
 export default GameBoardTile
