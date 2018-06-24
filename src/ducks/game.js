@@ -1,6 +1,5 @@
-import { initBoard } from 'services/GameService'
 import { update } from 'ramda'
-import { hasAnyMovesLeft, hasWon, setNextSymbol } from 'services/GameService'
+import { initBoard, hasAnyMovesLeft, hasWon, setNextSymbol } from 'services/GameService'
 
 const SET_SYMBOL = 'SET_SYMBOL'
 
@@ -14,7 +13,7 @@ const initState = {
   board: initBoard,
   nextSymbol: 'x',
   winner: false,
-  hasAnyMovesLeft: true,
+  hasAnyMovesLeft: true
 }
 
 export default (state = initState, action = {}) => {
